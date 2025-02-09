@@ -1,0 +1,2 @@
+# xdn2ankicsv
+シャレイア語のxdnファイルをAnki用のcsvに変換する
