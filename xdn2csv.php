@@ -20,7 +20,7 @@
             if(!$isEnglish){
                 if(str_starts_with($row, "*")){
                     if($wordId !== 0){
-                        $return = array_pad($return, 5, "");
+                        $return = array_pad($return, 8, "");
                     }
                     $return = &$returns[$wordId];//参照渡しとすることで、returnを編集するとreturnsの各要素も変更される
                     $return[] = preg_replace('/\* @\d+ ([^\s~]+)~*/','\1',$row);
@@ -35,6 +35,8 @@
                     $return[] = preg_replace('/M: (\S+)/','\1',$row);
                 }elseif(str_starts_with($row, "U:")){
                     $return[] = preg_replace('/U: (\S+)/','\1',$row);
+                }elseif(str_starts_with($row, "S:")){
+                    $return[] = preg_replace('/S: (\S+)/','\1',$row);
                 }
             }
         }
